@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Marketplace Persona - AgroMarket</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <main style="min-height:100vh; display:flex; align-items:center; justify-content:center; background-color:var(--bg-light);">
+        <div style="background:var(--bg-white); padding:40px; border-radius:12px; border:1px solid var(--border-color); max-width:460px; width:90%; box-shadow:var(--shadow-lg);">
+            <h2 style="text-align:center; margin-bottom:10px;">Establish Identity Node</h2>
+            <p style="text-align:center; color:var(--text-muted); margin-bottom:30px;">Register your marketplace account.</p>
+            
+            <form id="register-form" onsubmit="AuthController.validateRegister(event)">
+                <div style="margin-bottom:15px;">
+                    <label style="display:block; margin-bottom:5px; font-weight:500;">Legal Representative Identity Entity</label>
+                    <input type="text" id="reg-name" required style="width:100%; padding:10px; border-radius:6px; border:1px solid var(--border-color); background:var(--bg-light); color:var(--text-dark);">
+                </div>
+                <div style="margin-bottom:15px;">
+                    <label style="display:block; margin-bottom:5px; font-weight:500;">Target Communication Email</label>
+                    <input type="email" id="reg-email" required style="width:100%; padding:10px; border-radius:6px; border:1px solid var(--border-color); background:var(--bg-light); color:var(--text-dark);">
+                </div>
+                <div style="margin-bottom:20px;">
+                    <label style="display:block; margin-bottom:5px; font-weight:500;">Access Keyphrase (Min 6 Characters)</label>
+                    <input type="password" id="reg-password" required style="width:100%; padding:10px; border-radius:6px; border:1px solid var(--border-color); background:var(--bg-light); color:var(--text-dark);">
+                </div>
+                <div style="margin-bottom:20px; display:flex; gap:10px; align-items:center;">
+                    <input type="checkbox" id="reg-terms" required>
+                    <label for="reg-terms" style="font-size:0.85rem;">I endorse security and processing protocols.</label>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%; margin-bottom:15px;">Commit Registration Manifest</button>
+            </form>
+            <p style="font-size:0.9rem; text-align:center; color:var(--text-muted)">Has access authorization configuration? <a href="login.html" style="color:var(--primary-green); font-weight:bold;">Sign In</a></p>
+        </div>
+    </main>
+    <script src="main.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

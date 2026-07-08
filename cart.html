@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Manifest Storage - AgroMarket</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">Agro<span>Market</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link">Shop Catalog</a></li>
+                <li><a href="about.html" class="nav-link">Our Mission</a></li>
+                <li><a href="faq.html" class="nav-link">FAQs</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <span class="theme-toggle" title="Toggle Display State">🌓</span>
+                <a href="login.html" class="btn btn-outline" style="padding:8px 16px; font-size:0.9rem;">Sign In</a>
+                <div class="cart-icon-wrapper" onclick="window.location.href='cart.html'">
+                    🛒<span class="cart-badge">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="margin-top:40px;">
+        <h1 style="margin-bottom:30px;">Your Cart Manifest</h1>
+        <div style="display:grid; grid-template-columns: 2fr 1fr; gap:30px; align-items:start;">
+            <div class="data-table-container" style="margin:0;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Product Reference</th>
+                            <th>Unit Value</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-page-injection-target"></tbody>
+                </table>
+            </div>
+            
+            <div style="background:var(--bg-white); padding:25px; border-radius:12px; border:1px solid var(--border-color); box-shadow:var(--shadow-sm)">
+                <h3 style="border-bottom:1px solid var(--border-color); padding-bottom:15px; margin-bottom:15px;">Receipt Overview</h3>
+                <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
+                    <span>Product Group Cost:</span><strong id="cart-subtotal">₦0</strong>
+                </div>
+                <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
+                    <span>Logistics Transit Tariff:</span><strong id="cart-shipping">₦0</strong>
+                </div>
+                <hr style="border:0; border-top:1px solid var(--border-color); margin:15px 0;">
+                <div style="display:flex; justify-content:space-between; margin-bottom:25px; font-size:1.2rem;">
+                    <span>Cumulative Cost:</span><strong id="cart-total" style="color:var(--primary-green)">₦0</strong>
+                </div>
+                <button class="btn btn-primary" style="width:100%" onclick="window.location.href='checkout.html'">Forward to Checkout Protocol</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => CartEngine.renderCartPage());
+    </script>
+</body>
+</html>

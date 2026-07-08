@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchant Production Matrix Terminal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">Agro<span>Producer</span></div>
+            <ul class="sidebar-menu">
+                <li><a href="#" class="sidebar-link active">📊 Operational Ledger</a></li>
+                <li><a href="#" class="sidebar-link" id="open-add-product-modal">🌽 List Harvest Crop</a></li>
+                <li><a href="products.html" class="sidebar-link">🛒 Public Catalog Inspector</a></li>
+                <li><a href="index.html" class="sidebar-link">🚪 Exit Terminal</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header style="background:none; box-shadow:none; border:none; margin-bottom:30px; display:flex; justify-content:space-between; align-items:center;">
+                <h2>Agricultural Output Terminal Summary</h2>
+                <span class="theme-toggle" style="font-size:1.5rem;">🌓</span>
+            </header>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h4>Aggregated Dynamic Gross Valuation</h4>
+                    <div class="stat-val" data-target="1450000">₦0</div>
+                </div>
+                <div class="stat-card">
+                    <h4>Logistics Orders Processed</h4>
+                    <div class="stat-val" data-target="34">0</div>
+                </div>
+                <div class="stat-card">
+                    <h4>Unique Catalog Skus</h4>
+                    <div class="stat-val" data-target="12">0</div>
+                </div>
+            </div>
+
+            <h3>Active Farm Inventory Manifest</h3>
+            <div class="data-table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>SKU Token</th>
+                            <th>Item Classification Description</th>
+                            <th>Unit Value</th>
+                            <th>Current Volumetric Capacity</th>
+                            <th>Status Vector</th>
+                            <th>Execution Controls</th>
+                        </tr>
+                    </thead>
+                    <tbody id="farmer-product-table-body"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <div class="modal" id="add-product-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 style="margin-bottom:20px;">Inject Harvest Batch Object into Public Index</h3>
+            <form id="add-product-form">
+                <div style="margin-bottom:12px;">
+                    <label style="display:block; font-size:0.9rem; margin-bottom:4px;">Crop Metric Label Name</label>
+                    <input type="text" required style="width:100%; padding:8px; border:1px solid var(--border-color); background:var(--bg-light); color:var(--text-dark); border-radius:4px;">
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label style="display:block; font-size:0.9rem; margin-bottom:4px;">Yield Base Category</label>
+                    <select style="width:100%; padding:8px; border:1px solid var(--border-color); background:var(--bg-white); color:var(--text-dark); border-radius:4px;">
+                        <option>vegetables</option>
+                        <option>grains</option>
+                        <option>tubers</option>
+                        <option>poultry</option>
+                    </select>
+                </div>
+                <div style="grid-template-columns:1fr 1fr; display:grid; gap:10px; margin-bottom:20px;">
+                    <div>
+                        <label style="display:block; font-size:0.9rem; margin-bottom:4px;">Valuation Pricing (₦)</label>
+                        <input type="number" required style="width:100%; padding:8px; border:1px solid var(--border-color); background:var(--bg-light); color:var(--text-dark); border-radius:4px;">
+                    </div>
+                    <div>
+                        <label style="display:block; font-size:0.9rem; margin-bottom:4px;">Initial Stock Quantity</label>
+                        <input type="number" required style="width:100%; padding:8px; border:1px solid var(--border-color); background:var(--bg-light); color:var(--text-dark); border-radius:4px;">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Authorize Index Insertion</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="products.js"></script>
+    <script src="main.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

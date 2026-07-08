@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Access Security Node - AgroMarket</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <main style="min-height:100vh; display:flex; align-items:center; justify-content:center; background-color:var(--bg-light);">
+        <div style="background:var(--bg-white); padding:40px; border-radius:12px; border:1px solid var(--border-color); max-width:420px; width:90%; box-shadow:var(--shadow-lg);">
+            <h2 style="text-align:center; margin-bottom:10px;">Welcome Back</h2>
+            <p style="text-align:center; color:var(--text-muted); margin-bottom:30px;">Input credential validation attributes.</p>
+            
+            <form id="login-form" onsubmit="AuthController.validateLogin(event)">
+                <div style="margin-bottom:15px;">
+                    <label style="display:block; margin-bottom:5px; font-weight:500;">Electronic Mail</label>
+                    <input type="email" id="login-email" required style="width:100%; padding:10px; border-radius:6px; border:1px solid var(--border-color); background:var(--bg-light); color:var(--text-dark);">
+                </div>
+                <div style="margin-bottom:20px; position:relative;">
+                    <label style="display:block; margin-bottom:5px; font-weight:500;">Cryptographic Password</label>
+                    <input type="password" id="login-password" required style="width:100%; padding:10px; border-radius:6px; border:1px solid var(--border-color); background:var(--bg-light); color:var(--text-dark);">
+                    <span onclick="AuthController.togglePassword('login-password')" style="position:absolute; right:10px; bottom:8px; cursor:pointer;">👁</span>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%; margin-bottom:15px;">Verify Terminal Access</button>
+            </form>
+            <p style="font-size:0.9rem; text-align:center; color:var(--text-muted)">New to the platform? <a href="register.html" style="color:var(--primary-green); font-weight:bold;">Register Here</a></p>
+        </div>
+    </main>
+    <script src="main.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
